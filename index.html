@@ -1,0 +1,706 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOKUMEN RESMI: DOSIR PERKARA KORUPSI KOTA PALOPO - SISTEM PUSAT DOKUMEN PENTING</title>
+    <style>
+        :root {
+            --primary-navy: #0f1e36;
+            --secondary-blue: #1e3a8a;
+            --accent-gold: #b45309;
+            --danger-red: #b91c1c;
+            --warning-amber: #d97706;
+            --success-green: #15803d;
+            --dark-charcoal: #1e293b;
+            --light-bg: #f8fafc;
+            --card-bg: #ffffff;
+            --border-color: #cbd5e1;
+            --text-main: #334155;
+            --font-serif: 'Times New Roman', Times, serif;
+            --font-sans: 'Segoe UI', -apple-system, BlinkMacSystemFont, Roboto, Helvetica, Arial, sans-serif;
+            --font-mono: 'Courier New', Courier, monospace;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: var(--font-sans);
+            background-color: #e2e8f0;
+            color: var(--text-main);
+            line-height: 1.6;
+            padding: 20px 10px;
+        }
+
+        .document-container {
+            max-width: 1080px;
+            margin: 0 auto;
+            background-color: var(--card-bg);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+            border: 1px solid #94a3b8;
+            position: relative;
+            background-image: 
+                radial-gradient(#e2e8f0 0.75px, transparent 0.75px),
+                radial-gradient(#e2e8f0 0.75px, #ffffff 0.75px);
+            background-size: 30px 30px;
+            background-position: 0 0, 15px 15px;
+        }
+
+        .watermark {
+            position: absolute;
+            top: 40%;
+            left: 50%;
+            transform: translate(-50%, -50%) rotate(-32deg);
+            font-size: 5rem;
+            font-weight: 900;
+            color: rgba(185, 28, 28, 0.045);
+            text-transform: uppercase;
+            pointer-events: none;
+            user-select: none;
+            white-space: nowrap;
+            letter-spacing: 12px;
+            z-index: 1;
+        }
+
+        .top-security-bar {
+            background-color: var(--primary-navy);
+            color: #f8fafc;
+            padding: 10px 25px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.8rem;
+            letter-spacing: 1.5px;
+            border-bottom: 3px solid var(--accent-gold);
+            text-transform: uppercase;
+            font-weight: 600;
+        }
+
+        .security-badge {
+            background-color: var(--danger-red);
+            color: #ffffff;
+            padding: 3px 10px;
+            border-radius: 3px;
+            font-weight: 700;
+            letter-spacing: 1px;
+        }
+
+        .doc-header {
+            padding: 35px 45px 25px;
+            border-bottom: 2px solid var(--primary-navy);
+            position: relative;
+            background: #ffffff;
+            display: grid;
+            grid-template-columns: 90px 1fr 160px;
+            gap: 20px;
+            align-items: center;
+        }
+
+        .garuda-emblem {
+            width: 85px;
+            height: 85px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border: 2px solid #cbd5e1;
+            border-radius: 50%;
+            background: #fff;
+            box-shadow: inset 0 0 10px rgba(0,0,0,0.05);
+        }
+
+        .emblem-symbol {
+            font-size: 2.8rem;
+            color: var(--accent-gold);
+            font-weight: bold;
+        }
+
+        .header-title-block {
+            text-align: center;
+        }
+
+        .header-title-block h4 {
+            font-family: var(--font-serif);
+            font-size: 0.95rem;
+            letter-spacing: 2px;
+            color: #475569;
+            text-transform: uppercase;
+            margin-bottom: 2px;
+        }
+
+        .header-title-block h2 {
+            font-family: var(--font-serif);
+            font-size: 1.35rem;
+            letter-spacing: 1px;
+            color: var(--primary-navy);
+            text-transform: uppercase;
+            font-weight: 800;
+            margin-bottom: 4px;
+        }
+
+        .header-title-block h3 {
+            font-size: 1.05rem;
+            color: var(--secondary-blue);
+            font-weight: 700;
+            letter-spacing: 0.8px;
+            margin-bottom: 6px;
+        }
+
+        .header-title-block p {
+            font-size: 0.78rem;
+            color: #64748b;
+        }
+
+        .doc-meta-box {
+            border: 1px dashed var(--border-color);
+            background: var(--light-bg);
+            padding: 10px;
+            border-radius: 4px;
+            font-size: 0.72rem;
+            line-height: 1.4;
+            font-family: var(--font-mono);
+        }
+
+        .doc-meta-box div {
+            margin-bottom: 4px;
+        }
+
+        .doc-meta-box strong {
+            color: var(--primary-navy);
+        }
+
+        .doc-content {
+            padding: 35px 45px;
+            position: relative;
+            z-index: 2;
+        }
+
+        .dossier-subject {
+            text-align: center;
+            margin-bottom: 30px;
+            border-bottom: 2px dashed #cbd5e1;
+            padding-bottom: 20px;
+        }
+
+        .dossier-subject h1 {
+            font-family: var(--font-serif);
+            font-size: 1.45rem;
+            color: var(--danger-red);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 800;
+            margin-bottom: 8px;
+        }
+
+        .dossier-subject p {
+            font-size: 0.88rem;
+            color: #475569;
+            font-weight: 500;
+        }
+
+        .dossier-subject .law-tag {
+            display: inline-block;
+            background: #fee2e2;
+            color: #991b1b;
+            padding: 3px 12px;
+            border-radius: 20px;
+            font-size: 0.75rem;
+            font-weight: 700;
+            margin-top: 8px;
+            border: 1px solid #fca5a5;
+        }
+
+        .case-section {
+            margin-bottom: 35px;
+            background: #ffffff;
+            border: 1px solid #e2e8f0;
+            border-radius: 6px;
+            overflow: hidden;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.04);
+        }
+
+        .section-header {
+            background: linear-gradient(90deg, var(--primary-navy) 0%, #1e293b 100%);
+            color: #ffffff;
+            padding: 12px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid var(--accent-gold);
+        }
+
+        .section-header h3 {
+            font-size: 0.98rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section-num {
+            background: var(--accent-gold);
+            color: #fff;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-family: var(--font-mono);
+        }
+
+        .case-status-badge {
+            font-size: 0.72rem;
+            padding: 4px 10px;
+            border-radius: 4px;
+            font-weight: 700;
+            text-transform: uppercase;
+        }
+
+        .status-investigation {
+            background-color: #fef08a;
+            color: #854d0e;
+        }
+
+        .status-audit {
+            background-color: #fed7aa;
+            color: #9a3412;
+        }
+
+        .status-ongoing {
+            background-color: #fee2e2;
+            color: #991b1b;
+        }
+
+        .section-body {
+            padding: 22px;
+        }
+
+        .info-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+            margin-bottom: 18px;
+            background: #f8fafc;
+            padding: 15px;
+            border-radius: 6px;
+            border: 1px solid #e2e8f0;
+        }
+
+        .info-item {
+            font-size: 0.84rem;
+        }
+
+        .info-label {
+            color: #64748b;
+            font-weight: 600;
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            display: block;
+            margin-bottom: 2px;
+        }
+
+        .info-value {
+            color: var(--dark-charcoal);
+            font-weight: 600;
+        }
+
+        .highlight-c {
+            background-color: #dbeafe;
+            color: #1e40af;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            border: 1px solid #93c5fd;
+            display: inline-block;
+        }
+
+        .highlight-party {
+            background-color: #eff6ff;
+            color: #1d4ed8;
+            padding: 2px 8px;
+            border-radius: 4px;
+            font-weight: 700;
+            border: 1px solid #bfdbfe;
+        }
+
+        .case-narrative {
+            font-size: 0.88rem;
+            line-height: 1.7;
+            color: #334155;
+            margin-bottom: 16px;
+            text-align: justify;
+        }
+
+        .case-narrative p {
+            margin-bottom: 12px;
+        }
+
+        .fact-box {
+            border-left: 4px solid var(--secondary-blue);
+            background: #f0fdf4;
+            padding: 12px 16px;
+            margin: 15px 0;
+            font-size: 0.83rem;
+            border-radius: 0 4px 4px 0;
+        }
+
+        .fact-box.warning {
+            border-left-color: var(--warning-amber);
+            background: #fffbeb;
+        }
+
+        .fact-box.danger {
+            border-left-color: var(--danger-red);
+            background: #fef2f2;
+        }
+
+        .fact-box strong {
+            display: block;
+            margin-bottom: 4px;
+            color: var(--primary-navy);
+        }
+
+        .summary-table-wrap {
+            overflow-x: auto;
+            margin: 25px 0;
+        }
+
+        .summary-table {
+            width: 100%;
+            border-collapse: collapse;
+            font-size: 0.82rem;
+            text-align: left;
+        }
+
+        .summary-table th {
+            background-color: var(--primary-navy);
+            color: #ffffff;
+            font-weight: 700;
+            padding: 10px 12px;
+            border: 1px solid #334155;
+            text-transform: uppercase;
+            font-size: 0.74rem;
+        }
+
+        .summary-table td {
+            padding: 10px 12px;
+            border: 1px solid #cbd5e1;
+            vertical-align: top;
+        }
+
+        .summary-table tbody tr:nth-child(even) {
+            background-color: #f8fafc;
+        }
+
+        .legal-foundation-box {
+            background: #f1f5f9;
+            border: 1px solid #cbd5e1;
+            padding: 18px;
+            border-radius: 6px;
+            margin: 25px 0;
+            font-size: 0.83rem;
+        }
+
+        .legal-foundation-box h4 {
+            color: var(--primary-navy);
+            margin-bottom: 10px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .legal-list {
+            padding-left: 20px;
+            line-height: 1.6;
+        }
+
+        .legal-list li {
+            margin-bottom: 6px;
+        }
+
+        .auth-footer {
+            margin-top: 40px;
+            padding-top: 25px;
+            border-top: 2px solid var(--primary-navy);
+            display: grid;
+            grid-template-columns: 200px 1fr 240px;
+            gap: 25px;
+            align-items: center;
+        }
+
+        .qr-placeholder {
+            width: 130px;
+            height: 130px;
+            border: 2px solid #0f1e36;
+            padding: 6px;
+            background: #ffffff;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            font-family: var(--font-mono);
+            font-size: 0.65rem;
+            text-align: center;
+        }
+
+        .audit-trail {
+            font-size: 0.74rem;
+            color: #64748b;
+            line-height: 1.5;
+            font-family: var(--font-mono);
+        }
+
+        .signature-block {
+            text-align: center;
+            font-size: 0.82rem;
+        }
+
+        .signature-block .stamp {
+            display: inline-block;
+            border: 2px dashed #dc2626;
+            color: #dc2626;
+            font-weight: 800;
+            padding: 4px 12px;
+            border-radius: 6px;
+            text-transform: uppercase;
+            font-size: 0.72rem;
+            margin: 12px 0;
+            transform: rotate(-3deg);
+        }
+
+        .signature-name {
+            font-weight: 700;
+            color: var(--primary-navy);
+            text-decoration: underline;
+        }
+
+        .action-toolbar {
+            max-width: 1080px;
+            margin: 0 auto 15px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: #ffffff;
+            padding: 12px 20px;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+        }
+
+        .btn {
+            background-color: var(--secondary-blue);
+            color: #ffffff;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            cursor: pointer;
+        }
+
+        .btn-outline {
+            background: transparent;
+            color: var(--secondary-blue);
+            border: 1px solid var(--secondary-blue);
+        }
+
+        @media print {
+            body { background: none; padding: 0; }
+            .action-toolbar { display: none; }
+            .document-container { box-shadow: none; border: none; max-width: 100%; }
+        }
+
+        @media (max-width: 768px) {
+            .doc-header { grid-template-columns: 1fr; text-align: center; }
+            .info-grid { grid-template-columns: 1fr; }
+            .auth-footer { grid-template-columns: 1fr; text-align: center; }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="action-toolbar">
+        <div><strong>SISTEM INFORMASI ARSIP PUSAT DOKUMEN PENTING (SIM-DOKPIDSUS)</strong> &bull; STATUS: AKTIF</div>
+        <div>
+            <button class="btn btn-outline" onclick="window.print()">Cetak / PDF</button>
+            <button class="btn" onclick="alert('Integritas Kriptografi Dokumen Terverifikasi')">Verifikasi Digital</button>
+        </div>
+    </div>
+
+    <div class="document-container">
+        <div class="watermark">PRO JUSTITIA &bull; RAHASIA NEGARA</div>
+
+        <div class="top-security-bar">
+            <span>SISTEM INFORMASI MANAJEMEN PENANGANAN PERKARA TINDAK PIDANA KHUSUS</span>
+            <span class="security-badge">KLASIFIKASI: PRO JUSTITIA</span>
+            <span>ID REG: PLP-TIPIKOR-2026/DOC-08</span>
+        </div>
+
+        <header class="doc-header">
+            <div class="garuda-emblem"><span class="emblem-symbol">&#9878;</span></div>
+            <div class="header-title-block">
+                <h4>REPUBLIK INDONESIA</h4>
+                <h2>PUSAT DOKUMENTASI DATA HUKUM & PENYIDIKAN PERKARA KORUPSI</h2>
+                <h3>KORPS PENGAWASAN & PENEGAKAN HUKUM KEUANGAN NEGARA</h3>
+                <p>Arsip Terpadu Penanganan Dugaan Korupsi Infrastruktur & Penyalahgunaan APBD Kota Palopo</p>
+            </div>
+            <div class="doc-meta-box">
+                <div><strong>KODE ARSIP:</strong> DOK-PLP/VIII/2026</div>
+                <div><strong>UNIT KERJA:</strong> KEJARI PALOPO / PIDSUS</div>
+                <div><strong>WILAYAH:</strong> KOTA PALOPO, SUL-SEL</div>
+                <div><strong>LEGAL:</strong> UU NO. 31/1999 JO 20/2001</div>
+                <div><strong>STATUS:</strong> PROSES HUKUM AKTIF</div>
+            </div>
+        </header>
+
+        <main class="doc-content">
+            <div class="dossier-subject">
+                <h1>BERKAS DOKUMEN PUSAT: RESUME PERKARA KORUPSI TERINTEGRASI KOTA PALOPO</h1>
+                <p>1. Revitalisasi Lapangan Gaspa | 2. Proyek Kantor DPRD Rp 22 Miliar | 3. Korupsi Berjamaah SPPD Fiktif 25 Anggota DPRD</p>
+                <div class="law-tag">MONITORING PENYIDIKAN KEJAKSAAN NEGERI PALOPO & AUDIT BPK/INSPEKTORAT</div>
+            </div>
+
+            <!-- KLASTER 01 -->
+            <section class="case-section">
+                <div class="section-header">
+                    <h3><span class="section-num">KLASTER 01</span> DUGAAN KORUPSI REVITALISASI LAPANGAN SEPAK BOLA GASPA PALOPO</h3>
+                    <span class="case-status-badge status-investigation">Penyidikan Khusus / Penggeledahan</span>
+                </div>
+                <div class="section-body">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Objek Proyek</span>
+                            <span class="info-value">Revitalisasi Lapangan Sepak Bola Gaspa (Pemasangan Rumput Sintetis & Fasilitas)</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Satuan Kerja</span>
+                            <span class="info-value">Dinas Pekerjaan Umum dan Penataan Ruang (PUPR) Kota Palopo</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Legislator Terperiksa</span>
+                            <span class="info-value">
+                                <span class="highlight-c">Anggota DPRD Berinisial "C"</span> 
+                                <span class="highlight-party">Partai Politik Warna BIRU (Demokrat / NasDem)</span>
+                            </span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Pihak Rekanan Diperiksa</span>
+                            <span class="info-value">Rekanan Kontraktor Berinisial "A" dan Rekanan Berinisial "S"</span>
+                        </div>
+                    </div>
+
+                    <div class="case-narrative">
+                        <p><strong>Pemeriksaan Oknum Legislator Berinisial "C":</strong> Berdasarkan hasil pemeriksaan resmi penyidik Pidsus Kejaksaan Negeri Palopo (Agustus 2026), aparat memeriksa seorang oknum Anggota DPRD Kota Palopo berinisial <strong>"C"</strong> yang berafiliasi dengan partai politik berwarna bendera <strong>BIRU</strong> (seperti figur legislatif Fraksi Demokrat / Partai NasDem di Kota Palopo). Pemeriksaan dilakukan bersamaan dengan dua rekanan pelaksana proyek berinisial <strong>A</strong> dan <strong>S</strong>.</p>
+                        <p><strong>Penggeledahan Dinas PUPR:</strong> Tim Pidsus Kejari Palopo melakukan penggeledahan mendadak di Kantor Dinas PUPR Palopo di Kelurahan Tobulung, menyita puluhan dokumen kontrak, RAB, dokumen pencairan anggaran, serta unit CPU komputer untuk menyelidiki dugaan kongkalikong dan intervensi tender.</p>
+                    </div>
+
+                    <div class="fact-box danger">
+                        <strong>Temuan Penyimpangan Material:</strong>
+                        Perubahan sepihak spesifikasi rumput sintetis dan sistem peresapan/drainase bawah lapangan yang bertentangan dengan klausul kontrak kerja serta temuan kekurangan volume pekerjaan oleh BPK.
+                    </div>
+                </div>
+            </section>
+
+            <!-- KLASTER 02 -->
+            <section class="case-section">
+                <div class="section-header">
+                    <h3><span class="section-num">KLASTER 02</span> DUGAAN KORUPSI PEMBANGUNAN GEDUNG KANTOR DPRD KOTA PALOPO (RP 22 MILIAR)</h3>
+                    <span class="case-status-badge status-audit">Audit Forensik Konstruksi / UNM</span>
+                </div>
+                <div class="section-body">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Total Alokasi Anggaran</span>
+                            <span class="info-value">&plusmn; Rp 22.000.000.000,- (APBD Multiyears)</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Pelaksana Konstruksi</span>
+                            <span class="info-value">Tahap I: PT Tirani Teknik (~Rp 10,8 M) | Tahap II: PT Pasa Jaya Pratama (~Rp 11,0 M)</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Tim Forensik Fisik</span>
+                            <span class="info-value">Tim Ahli Konstruksi Sipil Universitas Negeri Makassar (UNM)</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Fokus Penyelidikan</span>
+                            <span class="info-value">Kesesuaian Volume Beton, Mutu Besi, RAB, dan Keandalan Struktur</span>
+                        </div>
+                    </div>
+
+                    <div class="case-narrative">
+                        <p><strong>Pemeriksaan Forensik Bangunan:</strong> Pembangunan gedung baru kantor DPRD Kota Palopo senilai Rp 22 Miliar diusut Kejari Palopo setelah adanya laporan masyarakat atas dugaan perbedaan signifikan antara kondisi fisik bangunan gedung dengan dokumen RAB. Tim ahli independen UNM dilibatkan untuk menguji kualitas spesifikasi dan mengkalkulasi selisih kerugian keuangan negara.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- KLASTER 03 -->
+            <section class="case-section">
+                <div class="section-header">
+                    <h3><span class="section-num">KLASTER 03</span> KORUPSI BERJAMAAH 25 ANGGOTA DPRD: SPPD FIKTIF & BIAYA PERJALANAN DINAS</h3>
+                    <span class="case-status-badge status-ongoing">Penyidikan Berjamaah / Seluruh Fraksi</span>
+                </div>
+                <div class="section-body">
+                    <div class="info-grid">
+                        <div class="info-item">
+                            <span class="info-label">Subjek Terperiksa</span>
+                            <span class="info-value">25 Anggota DPRD Kota Palopo (Termasuk 3 Unsur Pimpinan Definitif)</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Satuan Kerja</span>
+                            <span class="info-value">Sekretariat DPRD Kota Palopo (APBD TA 2020 & 2021)</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Modus Pertanggungjawaban</span>
+                            <span class="info-value">Bill Hotel Palsu (Makassar), Tiket Pesawat & Bus Manipulatif, Kunjungan Fiktif</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Dasar Hukum Penuntutan</span>
+                            <span class="info-value">Pasal 4 UU Tipikor (Pengembalian Keuangan Tidak Menghapus Pidana)</span>
+                        </div>
+                    </div>
+
+                    <div class="case-narrative">
+                        <p><strong>Modus Kolektif-Kolegial:</strong> Seluruh 25 legislator DPRD Kota Palopo diperiksa maraton oleh Kejari Palopo terkait dugaan pencairan SPPD fiktif dan penggelembungan dana perjalanan dinas luar daerah. Kejaksaan menelusuri langsung ke hotel-hotel di Makassar dan maskapai penerbangan, membuktikan nomor registrasi dan bill yang dilampirkan tidak sesuai dengan catatan riil.</p>
+                    </div>
+
+                    <div class="fact-box danger">
+                        <strong>Klausul Pasal 4 UU No. 31/1999:</strong>
+                        Meski beberapa anggota dewan telah mengembalikan uang temuan ke kas daerah, Kejaksaan menegaskan proses penyidikan tidak dihentikan (tidak ada SP3), karena pengembalian kerugian negara hanya menjadi pertimbangan yang meringankan dalam persidangan, bukan alasan pemaaf atau penghapus tindak pidana.
+                    </div>
+                </div>
+            </section>
+
+            <!-- MATRIKS RESUME -->
+            <div class="legal-foundation-box">
+                <h4>PASAL PIDANA YANG DISANGKAKAN:</h4>
+                <ul class="legal-list">
+                    <li><strong>Pasal 2 ayat (1) & Pasal 3 UU No. 31/1999 jo. UU No. 20/2001:</strong> Perbuatan melawan hukum memperkaya diri/korporasi serta penyalahgunaan wewenang jabatan yang merugikan keuangan negara.</li>
+                    <li><strong>Pasal 9 UU No. 20/2001:</strong> Pemalsuan buku/dokumen administrasi pertanggungjawaban keuangan negara (SPPD & Bill Hotel fiktif).</li>
+                    <li><strong>Pasal 55 ayat (1) ke-1 KUHP:</strong> Turut serta / bersama-sama melakukan perbuatan tindak pidana korupsi (junto berjamaah).</li>
+                    <li><strong>Pasal 4 UU No. 31/1999:</strong> Pengembalian kerugian keuangan negara tidak menghapuskan dipidananya pelaku.</li>
+                </ul>
+            </div>
+
+            <footer class="auth-footer">
+                <div class="qr-placeholder">
+                    <span style="font-size: 2rem; color: #0f1e36;">&#9638;</span>
+                    <span>ID VERIFIKASI<br><strong>PLP-TIPIKOR-2026</strong></span>
+                </div>
+                <div class="audit-trail">
+                    <p><strong>LOG ARSIP SISTEM PUSAT:</strong></p>
+                    <p>&bull; Sumber Data: Kejari Palopo & LHP Auditor Negara</p>
+                    <p>&bull; Kategori Dokumen: Pemantauan Integritas APBD</p>
+                    <p>&bull; Status Arsip: Dokumen Resmi Terverifikasi</p>
+                </div>
+                <div class="signature-block">
+                    <p>Dikeluarkan Oleh:</p>
+                    <div class="stamp">DOKUMEN RESMI NEGARA</div>
+                    <p class="signature-name">TIM ASISTENSI PIDSUS & INTELIJEN HUKUM</p>
+                </div>
+            </footer>
+        </main>
+    </div>
+
+</body>
+</html>
